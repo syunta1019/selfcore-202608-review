@@ -91,15 +91,8 @@ table.led .sub.i{display:inline}
 .yoy .arw em{display:block;font-style:normal;font-size:11px;letter-spacing:.12em;color:var(--faint);margin-top:4px}
 
 /* テーマ */
-.themes{counter-reset:th;border-top:1px solid var(--line)}
-.themes .t{display:grid;grid-template-columns:56px 1fr 300px;gap:28px;
-  padding:30px 0;border-bottom:1px solid var(--line);align-items:baseline}
-.themes .t:before{counter-increment:th;content:counter(th,decimal-leading-zero);
-  font-size:26px;font-weight:700;color:var(--faint);font-variant-numeric:tabular-nums;line-height:1}
-.themes .t h4{font-size:21px;font-weight:700;line-height:1.5;letter-spacing:-.005em}
-.themes .t .f{font-size:13px;color:var(--gray);line-height:2}
-.themes .t .f b{color:var(--navy);font-weight:700;font-variant-numeric:tabular-nums}
-.themes .t .f i{font-style:normal;color:var(--red);font-weight:700;font-variant-numeric:tabular-nums}
+.topic{font-size:clamp(30px,4.6vw,52px);font-weight:700;line-height:1.45;
+  letter-spacing:-.015em;padding:14px 0 0;border-top:2px solid var(--navy);max-width:900px}
 
 /* 8期進捗 */
 .pace{display:flex;align-items:flex-end;gap:64px;flex-wrap:wrap;margin-bottom:16px}
@@ -173,8 +166,8 @@ footer{padding:40px 0 70px;font-size:11.5px;color:var(--faint);line-height:1.9}
   .yoy{grid-template-columns:1fr}
   .yoy .c.hi{padding-left:0;border-left:0;border-top:1px solid var(--line);padding-top:26px;margin-top:26px}
   .yoy .arw{padding:22px 0 0;text-align:left}
-  .themes .t{grid-template-columns:38px 1fr;gap:14px}
-  .themes .t .f{grid-column:2/-1}
+
+
   .pace{gap:32px}
   .pace .verdict{font-size:17px;max-width:none}
   .prog .r{grid-template-columns:1fr 92px;gap:14px}
@@ -232,35 +225,32 @@ footer{padding:40px 0 70px;font-size:11.5px;color:var(--faint);line-height:1.9}
 
 <section>
   <div class="wrap">
-    <h2>前年同月比 ／ 2025年8月</h2>
-    <div class="yoy">
-      <div class="c">
-        <div class="yl">2025年8月<span>7期</span></div>
-        <div class="yn num">1,670<small>万円</small></div>
-        <table class="led">
-          <tr><td>REBOOST</td><td class="num">940万円</td><td class="num">56.3%</td></tr>
-          <tr><td>SELFCORE</td><td class="num">730万円</td><td class="num">43.7%</td></tr>
-          <tr><td>THE VISION</td><td class="num">—</td><td class="num">未提供</td></tr>
-          <tr><td>法人REBOOST</td><td class="num">—</td><td class="num">未提供</td></tr>
-        </table>
-        <div class="ys">提供プロダクト 2種</div>
-      </div>
-      <div class="arw"><span class="num">×2.4</span><em>前年同月比</em></div>
-      <div class="c hi">
-        <div class="yl">2026年8月<span>8期</span></div>
-        <div class="yn num">4,092<small>万円</small></div>
-        <table class="led">
-          <tr><td>SELFCORE</td><td class="num">2,171万円</td><td class="num">53.1%</td></tr>
-          <tr><td>REBOOST</td><td class="num">898万円</td><td class="num">21.9%</td></tr>
-          <tr><td>THE VISION</td><td class="num">847万円</td><td class="num">20.7%</td></tr>
-          <tr><td>法人REBOOST</td><td class="num">175万円</td><td class="num">4.3%</td></tr>
-        </table>
-        <div class="ys">提供プロダクト 4種</div>
-      </div>
+    <h2>前年同月比 ／ 2025年8月 → 2026年8月</h2>
+    <div class="pace">
+      <div class="b"><em>前年同月比 成長率</em>+145.0<small>%</small></div>
+      <div class="b t"><em>倍率</em>×2.45</div>
+      <div class="verdict">1,670万円 → 4,092万円<span>増加額 +2,422万円。提供プロダクトは2種→4種。</span></div>
     </div>
+
+    <table class="led" style="margin-top:44px">
+      <tr><th>プロダクト</th><th>2025年8月<span class="sub i">7期</span></th><th>2026年8月<span class="sub i">8期</span></th><th>増減</th><th>成長率</th></tr>
+      <tr><td>SELFCORE</td><td class="num">730万円</td><td class="v num">2,171万円</td><td class="num" style="color:var(--green)">+1,441万円</td><td class="v num" style="color:var(--green)">+197.4%</td></tr>
+      <tr><td>REBOOST<span class="sub">一般開催</span></td><td class="num">940万円</td><td class="v num">898万円</td><td class="num" style="color:var(--red)">▲42万円</td><td class="v num" style="color:var(--red)">−4.4%</td></tr>
+      <tr><td>THE VISION<span class="sub">売上計上開始 2026年2月</span></td><td class="num">—</td><td class="v num">847万円</td><td class="num" style="color:var(--green)">+847万円</td><td class="num">新規</td></tr>
+      <tr><td>法人REBOOST<span class="sub">売上計上開始 2026年8月</span></td><td class="num">—</td><td class="v num">175万円</td><td class="num" style="color:var(--green)">+175万円</td><td class="num">新規</td></tr>
+      <tr class="tot"><td>合計</td><td class="num">1,670万円</td><td class="v num">4,092万円</td><td class="num" style="color:var(--green)">+2,422万円</td><td class="v num" style="color:var(--green)">+145.0%</td></tr>
+    </table>
+
+    <div class="strip" style="margin-top:56px">
+      <div><div class="l">売上構成比の主役</div><div class="n" style="font-size:26px">REBOOST → SELFCORE</div><div class="s">56.3% → 21.9% ／ 43.7% → 53.1%</div></div>
+      <div><div class="l">新規プロダクト寄与</div><div class="n num">1,022<small>万円</small></div><div class="s">THE VISION 847万＋法人REBOOST 175万</div></div>
+      <div><div class="l">増加額に占める既存2製品</div><div class="n num">57.8<small>%</small></div><div class="s">+1,441万−42万＝+1,399万 ／ +2,422万</div></div>
+      <div><div class="l">提供プロダクト数</div><div class="n num">2 → 4</div><div class="s">THE VISION・法人REBOOSTが追加</div></div>
+    </div>
+
     <p class="note">
-      <b>出典</b> 2025年8月＝7期セルフコア事業経営シート「事業利益」タブ（管理会計・税抜表示）。2026年8月＝Slack #04_セルフコア事業部 2026-09-01 投稿／GOAL戦略ブック「8期売上/集客実績」。<br>
-      <b>注</b> THE VISIONの売上計上開始は2026年2月、法人REBOOSTは2026年8月（ホットスタッフ2期）。2025年8月時点はREBOOST・SELFCOREの2プロダクト構成。前年と当月で出典ブックが異なり税区分の表示も異なるため、×2.4倍は概算。
+      <b>出典</b> 2025年8月＝7期セルフコア事業経営シート「事業利益」タブ（管理会計・税抜表示／REBOOST 9,398,651円・SELFCORE 7,301,910円・収入合計 16,700,561円）。2026年8月＝Slack #04_セルフコア事業部 2026-09-01 投稿／GOAL戦略ブック「8期売上/集客実績」。<br>
+      <b>注</b> 2025年8月時点はREBOOST・SELFCOREの2プロダクト構成。前年と当月で出典ブックが異なり税区分の表示も異なるため、成長率は概算。2026年8月の内訳の単純合計は4,091万円（端数処理差）。
     </p>
   </div>
 </section>
@@ -437,30 +427,8 @@ footer{padding:40px 0 70px;font-size:11.5px;color:var(--faint);line-height:1.9}
 
 <section>
   <div class="wrap">
-    <h2>8月を終えて、今話したいこと</h2>
-    <div class="themes">
-      <div class="t">
-        <h4>REBOOST集客をどう戻すか</h4>
-        <div class="f">通期進捗 <b>11.5%</b>（1,766 / 15,300万円）<br>時間経過16.7%に対し <i>−5.2pt</i><br>4プロダクトで唯一、売上構成比が前年の56.3%から<b>21.9%</b>へ低下</div>
-      </div>
-      <div class="t">
-        <h4>RB→SELFCOREアップセルの開催間格差</h4>
-        <div class="f">決済率 47期 <b>33.7%</b> ／ 48期 <i>17.5%</i><br>口頭合意数 47期3件・48期6件に対し、申込は38件・7件<br>8期累計 決済率 <b>33.4%</b></div>
-      </div>
-      <div class="t">
-        <h4>法人REBOOSTを事業の柱にするか</h4>
-        <div class="f">通期進捗 <b>4.5%</b>（176 / 3,900万円）／時間比 <i>−12.2pt</i><br>8月に初計上 175万円（ホットスタッフ2期・51名）<br>9月は月次GOALの設定なし（0円）</div>
-      </div>
-      <div class="t">
-        <h4>SELFCORE・THE VISIONの先行分をどこまで見込むか</h4>
-        <div class="f">通期進捗 SELFCORE <b>22.5%</b>（時間比 +5.8pt）<br>THE VISION <b>16.9%</b>（時間比 +0.2pt）<br>2プロダクトで8月売上の <b>73.8%</b></div>
-      </div>
-      <div class="t">
-        <h4>8月GOALの基準をどちらに揃えるか</h4>
-        <div class="f">GOAL戦略ブック <b>4,550万円</b>（達成率89.9%・▲458万円）<br>Slack投稿 <b>4,400万円</b>（達成率93.0%・▲308万円）<br>9月GOALは両者一致 4,450万円</div>
-      </div>
-    </div>
-    <p class="note"><b>注</b> 各テーマに付した数値はすべて本資料内に記載の実績値。</p>
+    <h2>テーマ</h2>
+    <div class="topic">8月を振り返って今、話したいこと</div>
   </div>
 </section>
 
@@ -491,7 +459,7 @@ footer{padding:40px 0 70px;font-size:11.5px;color:var(--faint);line-height:1.9}
 
 <script>
 (function(){
-  var KEY='selfcore_202608_review_v5';
+  var KEY='selfcore_202608_review_v6';
   var doc=document.getElementById('doc'), st=document.getElementById('st');
   var editing=false;
   try{ var s=localStorage.getItem(KEY); if(s){ doc.innerHTML=s; st.textContent='保存済みの編集を復元'; } }catch(e){}
