@@ -64,8 +64,6 @@ table.led tr.tot td{border-bottom:2px solid var(--navy);border-top:1px solid var
 table.led tr.tot td.v{font-size:26px}
 table.led .sub{display:block;font-size:11.5px;font-weight:400;color:var(--gray);letter-spacing:.02em}
 table.led .sub.i{display:inline}
-table.led tr.dim td{color:var(--faint)}
-table.led tr.dim td.v{color:var(--faint);font-size:16px}
 
 .strip{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line)}
 .strip div{padding:26px 22px 26px 0;border-bottom:1px solid var(--line)}
@@ -74,21 +72,8 @@ table.led tr.dim td.v{color:var(--faint);font-size:16px}
 .strip .n{font-size:44px;font-weight:700;color:var(--navy);line-height:1.15;
   font-variant-numeric:tabular-nums;margin-top:4px}
 .strip .n small{font-size:.36em;font-weight:600;margin-left:.1em}
+.strip .s{font-size:11.5px;color:var(--faint);margin-top:2px}
 
-/* factor bars */
-.fac{border-top:1px solid var(--line)}
-.fac .row{display:grid;grid-template-columns:1fr 92px 190px;align-items:center;
-  gap:20px;padding:14px 0;border-bottom:1px solid var(--line)}
-.fac .lb{font-size:14.5px;font-weight:600}
-.fac .lb em{display:block;font-style:normal;font-size:11.5px;font-weight:400;color:var(--gray)}
-.fac .vv{text-align:right;font-size:22px;font-weight:700;color:var(--navy);
-  font-variant-numeric:tabular-nums}
-.fac .vv small{font-size:.5em;font-weight:600;color:var(--faint);margin-left:3px}
-.fac .track{height:6px;background:var(--soft);position:relative}
-.fac .track i{position:absolute;left:0;top:0;bottom:0;background:var(--navy);display:block}
-.fac .track i.acc{background:var(--orange)}
-
-/* voices */
 .voices{display:grid;grid-template-columns:1fr 1fr;gap:0 44px}
 .voice{padding:24px 0;border-bottom:1px solid var(--line)}
 .voice p{font-size:14.5px;line-height:1.95}
@@ -109,17 +94,22 @@ table.led tr.dim td.v{color:var(--faint);font-size:16px}
 .dark h2{color:#7d90b4}
 .dark .big{font-size:clamp(70px,10vw,128px);font-weight:700;line-height:.95;color:#fff}
 .dark .big small{font-size:.3em;margin-left:.12em}
-.dark p{color:#9fb2d4;font-size:13px;letter-spacing:.06em;margin-top:20px}
+.dark .strip{grid-template-columns:repeat(3,1fr);border-top:1px solid rgba(255,255,255,.18);margin-top:56px}
+.dark .strip div{border-bottom:1px solid rgba(255,255,255,.18)}
+.dark .strip div+div{border-left:1px solid rgba(255,255,255,.18)}
+.dark .strip .l{color:#9fb2d4}
+.dark .strip .n{color:#fff;font-size:38px}
+.dark .strip .s{color:#7d90b4}
+.dark .note{color:#7d90b4}
+.dark .note b{color:#9fb2d4}
 
 footer{padding:40px 0 70px;font-size:11.5px;color:var(--faint);line-height:1.9}
 
 @media(max-width:780px){
   .wrap{padding:0 22px} section{padding:64px 0}
-  .strip{grid-template-columns:repeat(2,1fr)}
+  .strip,.dark .strip{grid-template-columns:repeat(2,1fr)}
   .strip div+div{padding-left:0;border-left:0}
   .strip div:nth-child(even){padding-left:22px;border-left:1px solid var(--line)}
-  .fac .row{grid-template-columns:1fr 82px;gap:12px}
-  .fac .track{display:none}
   .voices{grid-template-columns:1fr;gap:0}
   .gal{grid-template-columns:repeat(2,1fr)}
   .gal a:nth-child(1){grid-column:span 2;grid-row:auto}
@@ -182,7 +172,7 @@ footer{padding:40px 0 70px;font-size:11.5px;color:var(--faint);line-height:1.9}
       <tr><td>法人REBOOST</td><td class="v num">175万円</td><td class="num">4.3%</td></tr>
       <tr class="tot"><td>合計</td><td class="v num">4,092万円</td><td class="num">100%</td></tr>
     </table>
-    <p class="note"><b>出典</b> Slack #04_セルフコア事業部 2026-09-01 投稿。構成比は各プロダクト売上÷4,092万円で算出（内訳の単純合計は4,091万円、端数処理差）。</p>
+    <p class="note"><b>出典</b> Slack #04_セルフコア事業部 2026-09-01 投稿。GOAL戦略ブック「8期売上/集客実績」①月次実績と一致。構成比は各プロダクト売上÷4,092万円で算出（内訳の単純合計は4,091万円、端数処理差）。</p>
   </div>
 </section>
 
@@ -205,87 +195,26 @@ footer{padding:40px 0 70px;font-size:11.5px;color:var(--faint);line-height:1.9}
 
 <section>
   <div class="wrap">
-    <h2>8月 開催実績</h2>
-    <table class="led">
-      <tr><th>開催</th><th>日程</th><th>講師</th><th>会場</th></tr>
-      <tr><td>REBOOST 47期</td><td>8/8（土）- 8/9（日）</td><td>村岡</td><td>TKP新橋汐留</td></tr>
-      <tr><td>REBOOST 48期</td><td>8/15（土）- 8/16（日）</td><td>今田</td><td>TKP新橋汐留</td></tr>
-      <tr><td>法人REBOOST<span class="sub">ホットスタッフ 2期</span></td><td>8/17（月）- 8/18（火）</td><td>村岡</td><td>TKPガーデンシティPREMIUM京橋</td></tr>
-      <tr><td>SELFCORE 13期</td><td>8/21（金）- 8/23（日）</td><td>葉山</td><td>美の山</td></tr>
-      <tr><td>THE VISION 6期</td><td>8/28（金）- 8/30（日）</td><td>村岡</td><td>ザ・プリンス箱根芦ノ湖</td></tr>
-    </table>
-    <p class="note"><b>出典</b> kb/11_schedule_8ki.md（8期年間スケジュール）。</p>
-  </div>
-</section>
+    <h2>8月 アップセル実績</h2>
 
-<section>
-  <div class="wrap">
-    <h2>8月 満足度・NPS</h2>
+    <h3>REBOOST → SELFCORE<span class="ct">8月開催分</span></h3>
     <table class="led">
-      <tr><th>開催</th><th>回答数</th><th>満足度<span class="sub i">（5点）</span></th><th>NPS<span class="sub i">（10点）</span></th><th>推奨者%<span class="sub i">（9-10）</span></th><th>運営満足度</th></tr>
-      <tr><td>REBOOST 47期<span class="sub">8/9</span></td><td class="num">100</td><td class="v num">4.73</td><td class="v num">8.90</td><td class="num">67%</td><td class="num">4.68 <span class="sub i">/5</span></td></tr>
-      <tr><td>REBOOST 48期<span class="sub">8/16</span></td><td class="num">59</td><td class="v num">4.63</td><td class="v num">8.29</td><td class="num">54%</td><td class="num">4.43 <span class="sub i">/5</span></td></tr>
-      <tr><td>SELFCORE 13期<span class="sub">8/21-23</span></td><td class="num">42</td><td class="v num">4.90</td><td class="v num">9.50</td><td class="num">—</td><td class="num">8.88 <span class="sub i">/10</span></td></tr>
-      <tr><td>THE VISION 6期<span class="sub">8/28-30</span></td><td class="num">21</td><td class="v num">5.00</td><td class="v num">9.76</td><td class="num">—</td><td class="num">9.48 <span class="sub i">/10 全体体験</span></td></tr>
+      <tr><th>開催</th><th>参加数</th><th>口頭合意</th><th>申込数</th><th>申込率</th><th>決済数</th><th>決済率</th><th>POTENTIAL加入</th></tr>
+      <tr><td>RB47期<span class="sub">8/8-9 ／ 村岡</span></td><td class="num">101</td><td class="num">3</td><td class="v num">38</td><td class="num">37.6%</td><td class="v num">34</td><td class="num">33.7%</td><td class="num">60（59.4%）</td></tr>
+      <tr><td>RB48期<span class="sub">8/15-16 ／ 今田</span></td><td class="num">40</td><td class="num">6</td><td class="v num">7</td><td class="num">17.5%</td><td class="v num">7</td><td class="num">17.5%</td><td class="num">24（60.0%）</td></tr>
+      <tr class="tot"><td>8期累計<span class="sub">RB45-48期</span></td><td class="num">290</td><td class="num">44</td><td class="v num">101</td><td class="num">34.8%</td><td class="v num">97</td><td class="num">33.4%</td><td class="num">171（59.0%）</td></tr>
     </table>
 
-    <h3 style="margin-top:64px">8期累計<span class="ct">2026年7月〜8月</span></h3>
+    <h3 style="margin-top:64px">SELFCORE → THE VISION<span class="ct">8月開催分</span></h3>
     <table class="led">
-      <tr><th>プロダクト</th><th>開催数</th><th>回答数</th><th>満足度<span class="sub i">（5点）</span></th><th>NPS<span class="sub i">（10点）</span></th><th>推奨者%</th><th>正味NPS</th></tr>
-      <tr><td>REBOOST</td><td class="num">4</td><td class="num">311</td><td class="v num">4.77</td><td class="v num">8.81</td><td class="num">64.6%</td><td class="num">—</td></tr>
-      <tr><td>SELFCORE</td><td class="num">2</td><td class="num">124</td><td class="v num">4.89</td><td class="v num">9.44</td><td class="num">82.3%</td><td class="num">79.0</td></tr>
-      <tr><td>THE VISION</td><td class="num">3</td><td class="num">73</td><td class="v num">4.86</td><td class="v num">9.52</td><td class="num">84.9%</td><td class="num">82.2</td></tr>
-    </table>
-    <p class="note">
-      <b>出典</b> 3プロダクト_アンケート統合ダッシュボード（RB・SC・TV）／REBOOST受講後アンケート_マスター（全期）／セルフコア合宿受講後アンケート／THE VISION アンケート回答_raw。2026-09-02 時点。<br>
-      <b>注</b> REBOOSTは一般開催のみ集計対象（法人REBOOSTは本集計に含まれない）。正味NPS＝推奨者%（9-10）−批判者%（0-6）、REBOOSTは源泉データが推奨者%のみのため算出不可。運営満足度はSELFCORE・THE VISIONが0-10点、REBOOSTが1-5点で尺度が異なる。THE VISION 8期の開催数3にはアンケート回答日ベースの1件を含む。
-    </p>
-  </div>
-</section>
-
-<section>
-  <div class="wrap">
-    <h2>8月 プログラム体感スコア</h2>
-
-    <h3>SELFCORE 13期 ｜ 5factor<span class="ct">n=42 ／ 各5点満点</span></h3>
-    <div class="fac">
-      <div class="row"><div class="lb">認識<em>自己不一致のパターンを認識できたか</em></div><div class="vv num">4.71<small>/5</small></div><div class="track"><i style="width:94.2%"></i></div></div>
-      <div class="row"><div class="lb">吐き出し<em>自己不一致を生み出した出来事・感情が見つかったか</em></div><div class="vv num">4.33<small>/5</small></div><div class="track"><i style="width:86.6%"></i></div></div>
-      <div class="row"><div class="lb">手放し<em>手放し後の身体感覚</em></div><div class="vv num">4.33<small>/5</small></div><div class="track"><i style="width:86.6%"></i></div></div>
-      <div class="row"><div class="lb">許可出し<em>許可出し後の身体感覚</em></div><div class="vv num">4.74<small>/5</small></div><div class="track"><i class="acc" style="width:94.8%"></i></div></div>
-      <div class="row"><div class="lb">エネルギー<em>自分のセルフコアのエネルギーをどの程度感じられたか</em></div><div class="vv num">4.57<small>/5</small></div><div class="track"><i style="width:91.4%"></i></div></div>
-      <div class="row"><div class="lb">ありのままの自分を受け入れられた</div><div class="vv num">4.79<small>/5</small></div><div class="track"><i class="acc" style="width:95.8%"></i></div></div>
-      <div class="row"><div class="lb">サポートコーチの存在の効果</div><div class="vv num">4.62<small>/5</small></div><div class="track"><i style="width:92.4%"></i></div></div>
-    </div>
-
-    <h3 style="margin-top:64px">REBOOST 47期・48期 ｜ 振り返り項目<span class="ct">各5点満点</span></h3>
-    <table class="led">
-      <tr><th>項目</th><th>47期<span class="sub i">n=91</span></th><th>48期<span class="sub i">n=41</span></th><th>8月計<span class="sub i">n=132</span></th></tr>
-      <tr><td>チームメンバーと今後も関わっていたいと感じる</td><td class="v num">4.69</td><td class="v num">4.63</td><td class="num">4.67</td></tr>
-      <tr><td>本来の自分・本来のエネルギーが発掘できる期待感</td><td class="v num">4.52</td><td class="v num">4.32</td><td class="num">4.45</td></tr>
-      <tr class="dim"><td>問題や課題が「信念」によって繰り返されていることの理解<span class="sub">8期（45期）以降 設問終了</span></td><td class="v num">—</td><td class="v num">—</td><td class="num">—</td></tr>
-      <tr class="dim"><td>参加前に想像もしえなかったエネルギーの体感<span class="sub">8期（45期）以降 設問終了</span></td><td class="v num">—</td><td class="v num">—</td><td class="num">—</td></tr>
-    </table>
-
-    <h3 style="margin-top:64px">THE VISION 6期 ｜ 人生の確信ほか<span class="ct">n=21</span></h3>
-    <table class="led">
-      <tr><th>項目</th><th>8月<span class="sub i">6期</span></th><th>参考<span class="sub i">2026/3-6 n=147</span></th></tr>
-      <tr><td>全体体験<span class="sub">0-10点</span></td><td class="v num">9.48</td><td class="num">—</td></tr>
-      <tr class="dim"><td>人生の確信<span class="sub">5点満点／2026年7月以降 設問終了</span></td><td class="v num">—</td><td class="num">4.86</td></tr>
-      <tr class="dim"><td>自分の価値<span class="sub">5点満点／2026年7月以降 設問終了</span></td><td class="v num">—</td><td class="num">4.88</td></tr>
-    </table>
-
-    <h3 style="margin-top:64px">THE VISION 6期 ｜ 最も価値を感じたプログラム<span class="ct">n=21</span></h3>
-    <table class="led">
-      <tr><th>プログラム</th><th>回答数</th><th>比率</th></tr>
-      <tr><td>THE VISION</td><td class="v num">12</td><td class="num">57.1%</td></tr>
-      <tr><td>SELFCORE</td><td class="v num">8</td><td class="num">38.1%</td></tr>
-      <tr><td>REBOOST</td><td class="v num">1</td><td class="num">4.8%</td></tr>
+      <tr><th>開催</th><th>参加数</th><th>口頭合意</th><th>申込数</th><th>申込率</th><th>決済数</th><th>決済率</th><th>POTENTIAL加入</th></tr>
+      <tr><td>SC13期<span class="sub">8/21-23 ／ 葉山</span></td><td class="num">45</td><td class="num">34（75.6%）</td><td class="v num">16</td><td class="num">35.6%</td><td class="v num">12</td><td class="num">26.7%</td><td class="num">18（40.0%）</td></tr>
+      <tr class="tot"><td>8期累計<span class="sub">SC12-13期</span></td><td class="num">133</td><td class="num">34</td><td class="v num">67</td><td class="num">50.4%</td><td class="v num">63</td><td class="num">47.4%</td><td class="num">69（51.9%）</td></tr>
     </table>
 
     <p class="note">
-      <b>出典</b> 各アンケートマスターの8月回答を実測集計（2026-09-02）。<br>
-      <b>注</b> 5factorのnは全42件。REBOOSTの振り返り項目は振り返りフォーム提出者のみが母数（47期91/100、48期41/59）。「信念による繰り返しの理解」「想像しえなかったエネルギーの体感」はREBOOST 45期以降、「人生の確信」「自分の価値」はTHE VISION 2026年7月以降、フォームから設問が外れているため8月の回答値なし。
+      <b>出典</b> 8期_REBOOST アップセル数値／8期_SELFCORE アップセル数値の「全体サマリー」（2026-09-02 時点）。<br>
+      <b>注</b> 申込率・決済率は開催からの経過日数で変動する。2026-09-02時点の経過日数はRB47期24日／RB48期17日／SC13期10日。参加数は各実績タブ（台帳）の値で、集客人数・アンケート回答数とは母数が異なる。
     </p>
   </div>
 </section>
@@ -346,14 +275,22 @@ footer{padding:40px 0 70px;font-size:11.5px;color:var(--faint);line-height:1.9}
   <div class="wrap">
     <h2>9月 GOAL</h2>
     <div class="big num">4,450<small>万円</small></div>
-    <p>出典：Slack #04_セルフコア事業部 2026-09-01 投稿</p>
+    <div class="strip">
+      <div><div class="l">SELFCORE</div><div class="n num">2,000<small>万円</small></div><div class="s">構成比 44.9% ／ 集客GOAL 60名（SC14期 9/25-27）</div></div>
+      <div><div class="l">THE VISION</div><div class="n num">1,350<small>万円</small></div><div class="s">構成比 30.3% ／ 集客GOAL 40名（TV7期 9/11-13）</div></div>
+      <div><div class="l">REBOOST</div><div class="n num">1,100<small>万円</small></div><div class="s">構成比 24.7% ／ 集客GOAL 100名（RB49期 9/5-6）</div></div>
+    </div>
+    <p class="note">
+      <b>出典</b> 総額はSlack #04_セルフコア事業部 2026-09-01 投稿。内訳はGOAL戦略ブック「8期売上/集客実績」②月次GOAL・④⑤⑥集客GOAL。<br>
+      <b>注</b> 9月の法人REBOOSTはGOAL設定なし（0円）。
+    </p>
   </div>
 </section>
 
 <footer>
   <div class="wrap">
     作成 2026-09-02 ／ 松浦俊太<br>
-    一次ソース：Slack #04_セルフコア事業部（2026-09-01 07:33 投稿）／3プロダクト_アンケート統合ダッシュボード／REBOOST受講後アンケート_マスター(全期)／セルフコア合宿受講後アンケート／【回答全件】THE VISION アンケート回答_raw／8期年間スケジュール
+    一次ソース：Slack #04_セルフコア事業部（2026-09-01 07:33 投稿）／GOAL_戦略 8期セルフコア事業「8期売上/集客実績」／8期_REBOOST アップセル数値／8期_SELFCORE アップセル数値／REBOOST受講後アンケート_マスター(全期)／セルフコア合宿受講後アンケート／【回答全件】THE VISION アンケート回答_raw
   </div>
 </footer>
 
@@ -361,7 +298,7 @@ footer{padding:40px 0 70px;font-size:11.5px;color:var(--faint);line-height:1.9}
 
 <script>
 (function(){
-  var KEY='selfcore_202608_review_v2';
+  var KEY='selfcore_202608_review_v3';
   var doc=document.getElementById('doc'), st=document.getElementById('st');
   var editing=false;
   try{ var s=localStorage.getItem(KEY); if(s){ doc.innerHTML=s; st.textContent='保存済みの編集を復元'; } }catch(e){}
