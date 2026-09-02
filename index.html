@@ -74,6 +74,39 @@ table.led .sub.i{display:inline}
 .strip .n small{font-size:.36em;font-weight:600;margin-left:.1em}
 .strip .s{font-size:11.5px;color:var(--faint);margin-top:2px}
 
+/* 8期進捗 */
+.pace{display:flex;align-items:flex-end;gap:64px;flex-wrap:wrap;margin-bottom:16px}
+.pace .b{font-size:clamp(64px,9vw,110px);font-weight:700;line-height:.92;color:var(--navy)}
+.pace .b small{font-size:.3em;font-weight:600;margin-left:.08em}
+.pace .b em{display:block;font-style:normal;font-size:12px;font-weight:600;
+  letter-spacing:.16em;color:var(--faint);margin-bottom:10px}
+.pace .b.t{color:var(--gray)}
+.pace .verdict{padding-bottom:12px;font-size:20px;font-weight:700;line-height:1.6;max-width:380px}
+.pace .verdict span{display:block;font-size:12px;font-weight:400;color:var(--gray);
+  letter-spacing:.04em;margin-top:6px}
+
+.prog{border-top:1px solid var(--line);margin-top:44px}
+.prog .r{display:grid;grid-template-columns:172px 1fr 108px;align-items:center;
+  gap:24px;padding:18px 0;border-bottom:1px solid var(--line)}
+.prog .nm{font-size:14.5px;font-weight:700}
+.prog .nm em{display:block;font-style:normal;font-size:11.5px;font-weight:400;
+  color:var(--gray);letter-spacing:.02em;font-variant-numeric:tabular-nums}
+.prog .track{position:relative;height:12px;background:var(--soft)}
+.prog .track i{position:absolute;left:0;top:0;bottom:0;background:var(--navy)}
+.prog .track i.lag{background:#b9c2d2}
+.prog .track i.lead{background:var(--orange)}
+.prog .track u{position:absolute;top:-5px;bottom:-5px;width:1px;background:var(--ink);opacity:.55}
+.prog .pc{text-align:right;font-size:22px;font-weight:700;color:var(--navy);
+  font-variant-numeric:tabular-nums}
+.prog .pc b{display:block;font-size:11.5px;font-weight:400;color:var(--faint)}
+.prog .legend{display:flex;gap:26px;font-size:11.5px;color:var(--faint);
+  padding-top:14px;letter-spacing:.04em;align-items:center}
+.prog .legend i{display:inline-block;width:18px;height:8px;margin-right:7px;vertical-align:-1px}
+.prog .legend i.a{background:var(--orange)}
+.prog .legend i.b{background:var(--navy)}
+.prog .legend i.c{background:#b9c2d2}
+.prog .legend i.d{width:1px;height:14px;background:var(--ink);opacity:.55;margin-right:9px}
+
 .voices{display:grid;grid-template-columns:1fr 1fr;gap:0 44px}
 .voice{padding:24px 0;border-bottom:1px solid var(--line)}
 .voice p{font-size:14.5px;line-height:1.95}
@@ -110,6 +143,10 @@ footer{padding:40px 0 70px;font-size:11.5px;color:var(--faint);line-height:1.9}
   .strip,.dark .strip{grid-template-columns:repeat(2,1fr)}
   .strip div+div{padding-left:0;border-left:0}
   .strip div:nth-child(even){padding-left:22px;border-left:1px solid var(--line)}
+  .pace{gap:32px}
+  .pace .verdict{font-size:17px;max-width:none}
+  .prog .r{grid-template-columns:1fr 92px;gap:14px}
+  .prog .track{grid-column:1/-1;order:3}
   .voices{grid-template-columns:1fr;gap:0}
   .gal{grid-template-columns:repeat(2,1fr)}
   .gal a:nth-child(1){grid-column:span 2;grid-row:auto}
@@ -158,6 +195,66 @@ footer{padding:40px 0 70px;font-size:11.5px;color:var(--faint);line-height:1.9}
         <strong class="num">93.0%</strong>
       </div>
     </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>8期 通期進捗</h2>
+    <div class="pace">
+      <div class="b"><em>累計実績 ／ 通期GOAL 5.94億円</em>10,083<small>万円</small></div>
+      <div class="b t"><em>通期進捗</em>17.0<small>%</small></div>
+      <div class="verdict">時間経過 16.7% に対し進捗 17.0%<span>12ヶ月中2ヶ月完了時点。事業計はオンペース。</span></div>
+    </div>
+
+    <div class="prog">
+      <div class="r">
+        <div class="nm">セルフコア事業 計<em>10,083 / 59,400万円</em></div>
+        <div class="track"><i class="lead" style="width:56.6%"></i><u style="left:55.6%"></u></div>
+        <div class="pc num">17.0%<b>時間比 +0.3pt</b></div>
+      </div>
+      <div class="r">
+        <div class="nm">SELFCORE<em>5,406 / 24,000万円</em></div>
+        <div class="track"><i style="width:75.1%"></i><u style="left:55.6%"></u></div>
+        <div class="pc num">22.5%<b>時間比 +5.8pt</b></div>
+      </div>
+      <div class="r">
+        <div class="nm">THE VISION<em>2,736 / 16,200万円</em></div>
+        <div class="track"><i style="width:56.3%"></i><u style="left:55.6%"></u></div>
+        <div class="pc num">16.9%<b>時間比 +0.2pt</b></div>
+      </div>
+      <div class="r">
+        <div class="nm">REBOOST<em>1,766 / 15,300万円</em></div>
+        <div class="track"><i class="lag" style="width:38.5%"></i><u style="left:55.6%"></u></div>
+        <div class="pc num">11.5%<b>時間比 −5.2pt</b></div>
+      </div>
+      <div class="r">
+        <div class="nm">法人REBOOST<em>176 / 3,900万円</em></div>
+        <div class="track"><i class="lag" style="width:15.0%"></i><u style="left:55.6%"></u></div>
+        <div class="pc num">4.5%<b>時間比 −12.2pt</b></div>
+      </div>
+      <div class="legend">
+        <span><i class="a"></i>事業計</span>
+        <span><i class="b"></i>時間経過以上</span>
+        <span><i class="c"></i>時間経過未満</span>
+        <span><i class="d"></i>時間経過 16.7%</span>
+        <span style="margin-left:auto">バーのスケール 0〜30%</span>
+      </div>
+    </div>
+
+    <h3 style="margin-top:64px">月次 実績 vs GOAL</h3>
+    <table class="led">
+      <tr><th>月</th><th>実績</th><th>GOAL</th><th>差異</th><th>達成率</th></tr>
+      <tr><td>7月</td><td class="v num">5,881万円</td><td class="num">4,350万円</td><td class="num" style="color:var(--green)">+1,531万円</td><td class="v num" style="color:var(--green)">135.2%</td></tr>
+      <tr><td>8月</td><td class="v num">4,092万円</td><td class="num">4,550万円</td><td class="num" style="color:var(--red)">▲458万円</td><td class="v num" style="color:var(--red)">89.9%</td></tr>
+      <tr class="tot"><td>7-8月 計</td><td class="v num">9,973万円</td><td class="num">8,900万円</td><td class="num" style="color:var(--green)">+1,073万円</td><td class="v num" style="color:var(--green)">112.1%</td></tr>
+    </table>
+
+    <p class="note">
+      <b>出典</b> GOAL戦略ブック「8期売上/集客実績」①月次実績・②月次GOAL・③達成率（2026-09-02 時点）。8期＝2026年7月〜2027年6月。<br>
+      <b>注</b> 累計実績10,083万円には9月計上済みの110万円を含む（7月5,881万＋8月4,092万＋9月110万）。時間経過は12ヶ月中2ヶ月完了＝16.7%（経過日数ベースでは17.3%）。<br>
+      <b>注</b> 8月GOALは本ブックが4,550万円、Slack投稿が4,400万円で相違がある。表紙の差異▲308万円はSlack投稿の4,400万円基準、本表はブック基準の4,550万円。
+    </p>
   </div>
 </section>
 
@@ -298,7 +395,7 @@ footer{padding:40px 0 70px;font-size:11.5px;color:var(--faint);line-height:1.9}
 
 <script>
 (function(){
-  var KEY='selfcore_202608_review_v3';
+  var KEY='selfcore_202608_review_v4';
   var doc=document.getElementById('doc'), st=document.getElementById('st');
   var editing=false;
   try{ var s=localStorage.getItem(KEY); if(s){ doc.innerHTML=s; st.textContent='保存済みの編集を復元'; } }catch(e){}
