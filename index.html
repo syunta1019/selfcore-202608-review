@@ -24,7 +24,6 @@ section{padding:96px 0}
 section+section{border-top:1px solid var(--line)}
 .num{font-variant-numeric:tabular-nums;letter-spacing:-.01em}
 
-/* toolbar */
 #bar{position:fixed;top:0;left:0;right:0;height:44px;background:var(--navy);
   display:flex;align-items:center;gap:26px;padding:0 22px;z-index:99;
   font-size:12.5px;letter-spacing:.06em;color:#c9d4e8}
@@ -34,14 +33,12 @@ section+section{border-top:1px solid var(--line)}
 #bar .on{color:var(--orange)}
 #bar span.st{margin-left:auto;color:#7d90b4;font-size:11px}
 
-/* cover */
-.cover{background:var(--navy-d);color:#fff;padding:110px 0 96px;margin-top:0}
+.cover{background:var(--navy-d);color:#fff;padding:110px 0 96px}
 .cover .kicker{font-size:12px;letter-spacing:.34em;color:#8fa5cd;margin-bottom:34px}
 .cover h1{font-size:clamp(38px,5.4vw,58px);font-weight:700;line-height:1.28;letter-spacing:-.01em}
 .cover .meta{margin-top:38px;padding-top:22px;border-top:1px solid rgba(255,255,255,.18);
   font-size:13px;color:#9fb2d4;letter-spacing:.04em}
 
-/* hero */
 .hero{display:flex;align-items:flex-end;gap:56px;flex-wrap:wrap}
 .hero .big{font-size:clamp(86px,13vw,168px);font-weight:700;line-height:.9;color:var(--navy)}
 .hero .big small{font-size:.3em;font-weight:600;margin-left:.12em;letter-spacing:0}
@@ -51,15 +48,14 @@ section+section{border-top:1px solid var(--line)}
 .hero .side .gap{color:var(--red)}
 
 h2{font-size:12px;letter-spacing:.3em;color:var(--faint);font-weight:600;margin-bottom:30px}
-h3{font-size:21px;font-weight:700;letter-spacing:.01em;margin-bottom:18px}
-.lead{font-size:29px;font-weight:700;line-height:1.5;letter-spacing:-.01em;max-width:900px}
+h3{font-size:19px;font-weight:700;letter-spacing:.01em;margin-bottom:16px}
+h3 .ct{font-size:12px;font-weight:400;color:var(--gray);letter-spacing:.04em;margin-left:12px}
 
-/* ruled ledger */
 table.led{width:100%;border-collapse:collapse;font-size:14.5px}
-table.led th{font-size:11.5px;letter-spacing:.14em;color:var(--faint);font-weight:600;
-  text-align:right;padding:0 0 10px;border-bottom:1px solid var(--line)}
+table.led th{font-size:11.5px;letter-spacing:.12em;color:var(--faint);font-weight:600;
+  text-align:right;padding:0 0 10px;border-bottom:1px solid var(--line);vertical-align:bottom}
 table.led th:first-child{text-align:left}
-table.led td{padding:16px 0;border-bottom:1px solid var(--line);text-align:right;
+table.led td{padding:15px 0;border-bottom:1px solid var(--line);text-align:right;
   font-variant-numeric:tabular-nums}
 table.led td:first-child{text-align:left;font-weight:600}
 table.led td.v{font-size:22px;font-weight:700;color:var(--navy)}
@@ -67,8 +63,10 @@ table.led tr.tot td{border-bottom:2px solid var(--navy);border-top:1px solid var
   padding-top:18px;font-weight:700}
 table.led tr.tot td.v{font-size:26px}
 table.led .sub{display:block;font-size:11.5px;font-weight:400;color:var(--gray);letter-spacing:.02em}
+table.led .sub.i{display:inline}
+table.led tr.dim td{color:var(--faint)}
+table.led tr.dim td.v{color:var(--faint);font-size:16px}
 
-/* stat strip */
 .strip{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line)}
 .strip div{padding:26px 22px 26px 0;border-bottom:1px solid var(--line)}
 .strip div+div{padding-left:26px;border-left:1px solid var(--line)}
@@ -76,9 +74,28 @@ table.led .sub{display:block;font-size:11.5px;font-weight:400;color:var(--gray);
 .strip .n{font-size:44px;font-weight:700;color:var(--navy);line-height:1.15;
   font-variant-numeric:tabular-nums;margin-top:4px}
 .strip .n small{font-size:.36em;font-weight:600;margin-left:.1em}
-.strip .s{font-size:11.5px;color:var(--faint);margin-top:2px}
 
-/* photos */
+/* factor bars */
+.fac{border-top:1px solid var(--line)}
+.fac .row{display:grid;grid-template-columns:1fr 92px 190px;align-items:center;
+  gap:20px;padding:14px 0;border-bottom:1px solid var(--line)}
+.fac .lb{font-size:14.5px;font-weight:600}
+.fac .lb em{display:block;font-style:normal;font-size:11.5px;font-weight:400;color:var(--gray)}
+.fac .vv{text-align:right;font-size:22px;font-weight:700;color:var(--navy);
+  font-variant-numeric:tabular-nums}
+.fac .vv small{font-size:.5em;font-weight:600;color:var(--faint);margin-left:3px}
+.fac .track{height:6px;background:var(--soft);position:relative}
+.fac .track i{position:absolute;left:0;top:0;bottom:0;background:var(--navy);display:block}
+.fac .track i.acc{background:var(--orange)}
+
+/* voices */
+.voices{display:grid;grid-template-columns:1fr 1fr;gap:0 44px}
+.voice{padding:24px 0;border-bottom:1px solid var(--line)}
+.voice p{font-size:14.5px;line-height:1.95}
+.voice .src{margin-top:10px;font-size:11.5px;color:var(--faint);letter-spacing:.06em}
+.vhead{font-size:13px;font-weight:700;letter-spacing:.1em;color:var(--navy);
+  padding-bottom:10px;border-bottom:2px solid var(--navy);margin:44px 0 0;grid-column:1/-1}
+
 .gal{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
 .gal img{width:100%;height:100%;object-fit:cover;aspect-ratio:4/3;display:block;background:var(--soft)}
 .gal a{display:block;overflow:hidden}
@@ -88,7 +105,6 @@ table.led .sub{display:block;font-size:11.5px;font-weight:400;color:var(--gray);
 .note{font-size:11.5px;color:var(--faint);line-height:1.9;margin-top:18px}
 .note b{color:var(--gray);font-weight:600}
 
-/* dark closer */
 .dark{background:var(--navy-d);color:#fff}
 .dark h2{color:#7d90b4}
 .dark .big{font-size:clamp(70px,10vw,128px);font-weight:700;line-height:.95;color:#fff}
@@ -102,6 +118,9 @@ footer{padding:40px 0 70px;font-size:11.5px;color:var(--faint);line-height:1.9}
   .strip{grid-template-columns:repeat(2,1fr)}
   .strip div+div{padding-left:0;border-left:0}
   .strip div:nth-child(even){padding-left:22px;border-left:1px solid var(--line)}
+  .fac .row{grid-template-columns:1fr 82px;gap:12px}
+  .fac .track{display:none}
+  .voices{grid-template-columns:1fr;gap:0}
   .gal{grid-template-columns:repeat(2,1fr)}
   .gal a:nth-child(1){grid-column:span 2;grid-row:auto}
   .gal a:nth-child(1) img{aspect-ratio:4/3}
@@ -201,25 +220,107 @@ footer{padding:40px 0 70px;font-size:11.5px;color:var(--faint);line-height:1.9}
 
 <section>
   <div class="wrap">
-    <h2>8月 満足度・NPS（受講後アンケート）</h2>
+    <h2>8月 満足度・NPS</h2>
     <table class="led">
-      <tr><th>開催</th><th>回答数</th><th>満足度<span class="sub" style="display:inline">（5点）</span></th><th>NPS<span class="sub" style="display:inline">（10点）</span></th><th>推奨者%</th><th>運営満足度</th></tr>
-      <tr><td>REBOOST 47期<span class="sub">8/9</span></td><td class="num">100</td><td class="v num">4.73</td><td class="v num">8.90</td><td class="num">67%</td><td class="num">4.68 <span class="sub" style="display:inline">/5</span></td></tr>
-      <tr><td>REBOOST 48期<span class="sub">8/16</span></td><td class="num">59</td><td class="v num">4.63</td><td class="v num">8.29</td><td class="num">54%</td><td class="num">4.43 <span class="sub" style="display:inline">/5</span></td></tr>
-      <tr><td>SELFCORE 13期<span class="sub">8月開催</span></td><td class="num">42</td><td class="v num">4.90</td><td class="v num">9.50</td><td class="num">—</td><td class="num">8.88 <span class="sub" style="display:inline">/10</span></td></tr>
-      <tr><td>THE VISION 6期<span class="sub">8月開催</span></td><td class="num">21</td><td class="v num">5.00</td><td class="v num">9.76</td><td class="num">—</td><td class="num">9.48 <span class="sub" style="display:inline">/10 全体体験</span></td></tr>
+      <tr><th>開催</th><th>回答数</th><th>満足度<span class="sub i">（5点）</span></th><th>NPS<span class="sub i">（10点）</span></th><th>推奨者%<span class="sub i">（9-10）</span></th><th>運営満足度</th></tr>
+      <tr><td>REBOOST 47期<span class="sub">8/9</span></td><td class="num">100</td><td class="v num">4.73</td><td class="v num">8.90</td><td class="num">67%</td><td class="num">4.68 <span class="sub i">/5</span></td></tr>
+      <tr><td>REBOOST 48期<span class="sub">8/16</span></td><td class="num">59</td><td class="v num">4.63</td><td class="v num">8.29</td><td class="num">54%</td><td class="num">4.43 <span class="sub i">/5</span></td></tr>
+      <tr><td>SELFCORE 13期<span class="sub">8/21-23</span></td><td class="num">42</td><td class="v num">4.90</td><td class="v num">9.50</td><td class="num">—</td><td class="num">8.88 <span class="sub i">/10</span></td></tr>
+      <tr><td>THE VISION 6期<span class="sub">8/28-30</span></td><td class="num">21</td><td class="v num">5.00</td><td class="v num">9.76</td><td class="num">—</td><td class="num">9.48 <span class="sub i">/10 全体体験</span></td></tr>
     </table>
 
-    <h3 style="margin-top:64px">8期累計（2026年7月〜8月）</h3>
+    <h3 style="margin-top:64px">8期累計<span class="ct">2026年7月〜8月</span></h3>
     <table class="led">
-      <tr><th>プロダクト</th><th>開催数</th><th>回答数</th><th>満足度<span class="sub" style="display:inline">（5点）</span></th><th>NPS<span class="sub" style="display:inline">（10点）</span></th><th>推奨者%</th><th>正味NPS</th></tr>
+      <tr><th>プロダクト</th><th>開催数</th><th>回答数</th><th>満足度<span class="sub i">（5点）</span></th><th>NPS<span class="sub i">（10点）</span></th><th>推奨者%</th><th>正味NPS</th></tr>
       <tr><td>REBOOST</td><td class="num">4</td><td class="num">311</td><td class="v num">4.77</td><td class="v num">8.81</td><td class="num">64.6%</td><td class="num">—</td></tr>
       <tr><td>SELFCORE</td><td class="num">2</td><td class="num">124</td><td class="v num">4.89</td><td class="v num">9.44</td><td class="num">82.3%</td><td class="num">79.0</td></tr>
       <tr><td>THE VISION</td><td class="num">3</td><td class="num">73</td><td class="v num">4.86</td><td class="v num">9.52</td><td class="num">84.9%</td><td class="num">82.2</td></tr>
     </table>
     <p class="note">
-      <b>出典</b> 3プロダクト_アンケート統合ダッシュボード（RB・SC・TV）／2026-09-02 時点の値。<br>
+      <b>出典</b> 3プロダクト_アンケート統合ダッシュボード（RB・SC・TV）／REBOOST受講後アンケート_マスター（全期）／セルフコア合宿受講後アンケート／THE VISION アンケート回答_raw。2026-09-02 時点。<br>
       <b>注</b> REBOOSTは一般開催のみ集計対象（法人REBOOSTは本集計に含まれない）。正味NPS＝推奨者%（9-10）−批判者%（0-6）、REBOOSTは源泉データが推奨者%のみのため算出不可。運営満足度はSELFCORE・THE VISIONが0-10点、REBOOSTが1-5点で尺度が異なる。THE VISION 8期の開催数3にはアンケート回答日ベースの1件を含む。
+    </p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>8月 プログラム体感スコア</h2>
+
+    <h3>SELFCORE 13期 ｜ 5factor<span class="ct">n=42 ／ 各5点満点</span></h3>
+    <div class="fac">
+      <div class="row"><div class="lb">認識<em>自己不一致のパターンを認識できたか</em></div><div class="vv num">4.71<small>/5</small></div><div class="track"><i style="width:94.2%"></i></div></div>
+      <div class="row"><div class="lb">吐き出し<em>自己不一致を生み出した出来事・感情が見つかったか</em></div><div class="vv num">4.33<small>/5</small></div><div class="track"><i style="width:86.6%"></i></div></div>
+      <div class="row"><div class="lb">手放し<em>手放し後の身体感覚</em></div><div class="vv num">4.33<small>/5</small></div><div class="track"><i style="width:86.6%"></i></div></div>
+      <div class="row"><div class="lb">許可出し<em>許可出し後の身体感覚</em></div><div class="vv num">4.74<small>/5</small></div><div class="track"><i class="acc" style="width:94.8%"></i></div></div>
+      <div class="row"><div class="lb">エネルギー<em>自分のセルフコアのエネルギーをどの程度感じられたか</em></div><div class="vv num">4.57<small>/5</small></div><div class="track"><i style="width:91.4%"></i></div></div>
+      <div class="row"><div class="lb">ありのままの自分を受け入れられた</div><div class="vv num">4.79<small>/5</small></div><div class="track"><i class="acc" style="width:95.8%"></i></div></div>
+      <div class="row"><div class="lb">サポートコーチの存在の効果</div><div class="vv num">4.62<small>/5</small></div><div class="track"><i style="width:92.4%"></i></div></div>
+    </div>
+
+    <h3 style="margin-top:64px">REBOOST 47期・48期 ｜ 振り返り項目<span class="ct">各5点満点</span></h3>
+    <table class="led">
+      <tr><th>項目</th><th>47期<span class="sub i">n=91</span></th><th>48期<span class="sub i">n=41</span></th><th>8月計<span class="sub i">n=132</span></th></tr>
+      <tr><td>チームメンバーと今後も関わっていたいと感じる</td><td class="v num">4.69</td><td class="v num">4.63</td><td class="num">4.67</td></tr>
+      <tr><td>本来の自分・本来のエネルギーが発掘できる期待感</td><td class="v num">4.52</td><td class="v num">4.32</td><td class="num">4.45</td></tr>
+      <tr class="dim"><td>問題や課題が「信念」によって繰り返されていることの理解<span class="sub">8期（45期）以降 設問終了</span></td><td class="v num">—</td><td class="v num">—</td><td class="num">—</td></tr>
+      <tr class="dim"><td>参加前に想像もしえなかったエネルギーの体感<span class="sub">8期（45期）以降 設問終了</span></td><td class="v num">—</td><td class="v num">—</td><td class="num">—</td></tr>
+    </table>
+
+    <h3 style="margin-top:64px">THE VISION 6期 ｜ 人生の確信ほか<span class="ct">n=21</span></h3>
+    <table class="led">
+      <tr><th>項目</th><th>8月<span class="sub i">6期</span></th><th>参考<span class="sub i">2026/3-6 n=147</span></th></tr>
+      <tr><td>全体体験<span class="sub">0-10点</span></td><td class="v num">9.48</td><td class="num">—</td></tr>
+      <tr class="dim"><td>人生の確信<span class="sub">5点満点／2026年7月以降 設問終了</span></td><td class="v num">—</td><td class="num">4.86</td></tr>
+      <tr class="dim"><td>自分の価値<span class="sub">5点満点／2026年7月以降 設問終了</span></td><td class="v num">—</td><td class="num">4.88</td></tr>
+    </table>
+
+    <h3 style="margin-top:64px">THE VISION 6期 ｜ 最も価値を感じたプログラム<span class="ct">n=21</span></h3>
+    <table class="led">
+      <tr><th>プログラム</th><th>回答数</th><th>比率</th></tr>
+      <tr><td>THE VISION</td><td class="v num">12</td><td class="num">57.1%</td></tr>
+      <tr><td>SELFCORE</td><td class="v num">8</td><td class="num">38.1%</td></tr>
+      <tr><td>REBOOST</td><td class="v num">1</td><td class="num">4.8%</td></tr>
+    </table>
+
+    <p class="note">
+      <b>出典</b> 各アンケートマスターの8月回答を実測集計（2026-09-02）。<br>
+      <b>注</b> 5factorのnは全42件。REBOOSTの振り返り項目は振り返りフォーム提出者のみが母数（47期91/100、48期41/59）。「信念による繰り返しの理解」「想像しえなかったエネルギーの体感」はREBOOST 45期以降、「人生の確信」「自分の価値」はTHE VISION 2026年7月以降、フォームから設問が外れているため8月の回答値なし。
+    </p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>8月 顧客アンケートの声</h2>
+    <div class="voices">
+
+      <div class="vhead">REBOOST 47期・48期</div>
+      <div class="voice"><p>「私は世間一般の評価に合わせて生きてきた為、本来の自分が本当は何をしたいのか、本来はどんな人だったのか、が分かりませんでしたが、それを知るきっかけを見つけられました。また、自分を止めている信念に幾つか気付けた事が大きな収穫でしたし、両親にしてもらえなかった事が吐き出せてとてもスッキリしている自分がいます。」</p><div class="src">REBOOST 47期 ／ 気づき・学び・変化</div></div>
+      <div class="voice"><p>「本当に参加して良かったと思っています。朝早くから夜遅くまで、常に全力で一人ひとりに向き合ってくださり、本当にありがたかったです。自分自身とここまで深く向き合う機会はなかなかなかったので、このプログラムを通して、自分でも気づいていなかった自分に気づくことができました。」</p><div class="src">REBOOST 47期 ／ ご意見・感想</div></div>
+      <div class="voice"><p>「各ワークの仕掛けや意図を話していただけたおかげで、その場かぎりの気づきではなくコトが変わっても問いを立てて内省できるなと思いました。今までだったら一歩引いて見ていただろうところを、コーチ陣が全力で向き合ってくださったおかげで素直に出すことができました。設計としても、コーチ陣の姿勢としてもとても信頼できる会でした。」</p><div class="src">REBOOST 47期 ／ ご意見・感想</div></div>
+      <div class="voice"><p>「いつの間にか自分を守るために無意識に行動していること、無意識に意味づけをしていることに気づきました。帰宅後すぐに自分が本当に思っていること、反省と謝罪を奥様にお伝えしました。涙ながら理解して受け入れてくれました。」</p><div class="src">REBOOST 47期 ／ 気づき・学び・変化</div></div>
+      <div class="voice"><p>「REBOOSTをすでに受講されたキャリスピの方が、声を枯らしていたので、『どーせみんなで訳もわからずめっちゃ叫んだりするんだろうな』とか思っている自分がいました。でも、蓋を開けたらそういうことじゃなかった。めちゃくちゃ刺激的な体感覚を得られました。」</p><div class="src">REBOOST 48期 ／ ご意見・感想</div></div>
+      <div class="voice"><p>「自分と向き合い、幼少期まで振り返る事はこの機会がないとしなかったと思います。自分を止めている“何か”が知れてよかったし、最高のチーム、チームコーチだから気づけたと思います。」</p><div class="src">REBOOST 48期 ／ ご意見・感想</div></div>
+
+      <div class="vhead">SELFCORE 13期</div>
+      <div class="voice"><p>「一言で言うと軽くなった。頭でなんとなく理解していたエラーを感覚として捉えることが出来たこと。やらなければ、やめなければという感覚から、もっと軽く、『やっていいんだよ』『やめてもいいんだよ』という体の力が抜けた。」</p><div class="src">SELFCORE 13期 ／ 実際に得られた成果</div></div>
+      <div class="voice"><p>「期待していたものは全て得られました。予想外だったのは、愛していいこと、人を大好きでいいことを認められた、許可出せたことが一番得られたことかもしれないです。あとは自分の空っぽさを見て安心できたことが得られたこと。」</p><div class="src">SELFCORE 13期 ／ 実際に得られた成果</div></div>
+      <div class="voice"><p>「自分が起こしているエラー行動を明確に認識できた。本来自分が持っているエネルギーの性質がわかった。自分を肯定できた。自分も周りも大切にしたい、できそうという思い。」</p><div class="src">SELFCORE 13期 ／ 実際に得られた成果</div></div>
+      <div class="voice"><p>「本気で自分を変えたい人に『受講』をおすすめします。講師やコーチが本気で向き合ってくれるので、人生の捉え方、生き方が大きく変わります。自分の生き方に何かモヤモヤがあると感じている方や、自分の人生を本気で良くしていきたいと思う方は、ぜひ受講をおすすめします。」</p><div class="src">SELFCORE 13期 ／ 参加を迷う人へのメッセージ</div></div>
+      <div class="voice"><p>「まさに【大人の青春！！】だった。人生、あんなに全力、オープンに関わったことはない。」</p><div class="src">SELFCORE 13期 ／ ご意見・感想</div></div>
+      <div class="voice"><p>「全てのワークとプラスアルファの時間ひとつひとつが重要な要素で、最高のプログラムでした。葉山さん、コーチ陣の皆さん、最高の3日間をありがとうございました！」</p><div class="src">SELFCORE 13期 ／ ご意見・感想</div></div>
+
+      <div class="vhead">THE VISION 6期</div>
+      <div class="voice"><p>「THE VISIONまで来てようやく完成された感じ！REBOOSTやSELFCORE終わりは、学び気づきはあったけどスッキリしきってない感じがしてました。THE VISIONを通してかなりスッキリしたし、これからもっとスッキリさせていけるんだろうなという感覚を得られました。」</p><div class="src">THE VISION 6期 ／ 最も価値を感じた理由</div></div>
+      <div class="voice"><p>「リブースト、セルフコアは、自己理解や自己変革と、内面的なインパクトが大きく、非常に有益だったが、未来への前進力については、圧倒的にthe visionが有益だったと感じたから。」</p><div class="src">THE VISION 6期 ／ 最も価値を感じた理由</div></div>
+      <div class="voice"><p>「順位決められないくらい全てに価値を感じた。全部お金では変えられないほど尊い、自分の中の概念が大きく動くサービスだった。その中でもTHE VISIONは、自分にはとてつもなく大きな可能性しかない、この為にこれまでの全ての経験があったんだと実感ができた。」</p><div class="src">THE VISION 6期 ／ 最も価値を感じた理由</div></div>
+      <div class="voice"><p>「本来感、自分とはこういう人間だったんだ。という感覚を得ることができた。自己否定が減り、圧倒的に生きやすくなった。苦しさから解放された。」</p><div class="src">THE VISION 6期 ／ 最も価値を感じた理由（SELFCORE）</div></div>
+
+    </div>
+    <p class="note">
+      <b>出典</b> 各受講後アンケートの8月回答（自由記述）。氏名は掲載していない。<br>
+      <b>注</b> SELFCORE・THE VISIONは「お客様の声として掲載可能」に同意した回答のみを抜粋。REBOOSTは8期の振り返りフォームに掲載可否設問がないため、匿名での抜粋。長い回答は文意を変えない範囲で抜粋している。
     </p>
   </div>
 </section>
@@ -252,7 +353,7 @@ footer{padding:40px 0 70px;font-size:11.5px;color:var(--faint);line-height:1.9}
 <footer>
   <div class="wrap">
     作成 2026-09-02 ／ 松浦俊太<br>
-    一次ソース：Slack #04_セルフコア事業部（2026-09-01 07:33 投稿）、3プロダクト_アンケート統合ダッシュボード、8期年間スケジュール
+    一次ソース：Slack #04_セルフコア事業部（2026-09-01 07:33 投稿）／3プロダクト_アンケート統合ダッシュボード／REBOOST受講後アンケート_マスター(全期)／セルフコア合宿受講後アンケート／【回答全件】THE VISION アンケート回答_raw／8期年間スケジュール
   </div>
 </footer>
 
@@ -260,7 +361,7 @@ footer{padding:40px 0 70px;font-size:11.5px;color:var(--faint);line-height:1.9}
 
 <script>
 (function(){
-  var KEY='selfcore_202608_review_v1';
+  var KEY='selfcore_202608_review_v2';
   var doc=document.getElementById('doc'), st=document.getElementById('st');
   var editing=false;
   try{ var s=localStorage.getItem(KEY); if(s){ doc.innerHTML=s; st.textContent='保存済みの編集を復元'; } }catch(e){}
