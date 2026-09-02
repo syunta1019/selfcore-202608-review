@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2026年8月度 セルフコア事業 実績</title>
+<style>
+:root{
+  --navy:#1F3A70; --navy-d:#152845; --orange:#E08746;
+  --ink:#1b232e; --gray:#5f6874; --faint:#98a1ad;
+  --line:#e7eaf0; --soft:#f6f8fb;
+  --red:#a8483c; --green:#2e7857;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+  font-family:"Yu Gothic Medium","Yu Gothic","YuGothic","Hiragino Sans","Helvetica Neue",sans-serif;
+  font-feature-settings:"palt";
+  color:var(--ink); background:#fff; line-height:1.75;
+  -webkit-font-smoothing:antialiased;
+  padding-top:44px;
+}
+.wrap{max-width:1080px;margin:0 auto;padding:0 40px}
+section{padding:96px 0}
+section+section{border-top:1px solid var(--line)}
+.num{font-variant-numeric:tabular-nums;letter-spacing:-.01em}
+
+/* toolbar */
+#bar{position:fixed;top:0;left:0;right:0;height:44px;background:var(--navy);
+  display:flex;align-items:center;gap:26px;padding:0 22px;z-index:99;
+  font-size:12.5px;letter-spacing:.06em;color:#c9d4e8}
+#bar b{color:#fff;font-weight:600;letter-spacing:.08em;margin-right:6px}
+#bar button{background:none;border:0;color:#c9d4e8;font:inherit;cursor:pointer;padding:4px 0}
+#bar button:hover{color:#fff}
+#bar .on{color:var(--orange)}
+#bar span.st{margin-left:auto;color:#7d90b4;font-size:11px}
+
+/* cover */
+.cover{background:var(--navy-d);color:#fff;padding:110px 0 96px;margin-top:0}
+.cover .kicker{font-size:12px;letter-spacing:.34em;color:#8fa5cd;margin-bottom:34px}
+.cover h1{font-size:clamp(38px,5.4vw,58px);font-weight:700;line-height:1.28;letter-spacing:-.01em}
+.cover .meta{margin-top:38px;padding-top:22px;border-top:1px solid rgba(255,255,255,.18);
+  font-size:13px;color:#9fb2d4;letter-spacing:.04em}
+
+/* hero */
+.hero{display:flex;align-items:flex-end;gap:56px;flex-wrap:wrap}
+.hero .big{font-size:clamp(86px,13vw,168px);font-weight:700;line-height:.9;color:var(--navy)}
+.hero .big small{font-size:.3em;font-weight:600;margin-left:.12em;letter-spacing:0}
+.hero .side{padding-bottom:14px}
+.hero .side div{font-size:13px;color:var(--gray);letter-spacing:.04em}
+.hero .side strong{display:block;font-size:30px;font-weight:700;color:var(--ink);line-height:1.35}
+.hero .side .gap{color:var(--red)}
+
+h2{font-size:12px;letter-spacing:.3em;color:var(--faint);font-weight:600;margin-bottom:30px}
+h3{font-size:21px;font-weight:700;letter-spacing:.01em;margin-bottom:18px}
+.lead{font-size:29px;font-weight:700;line-height:1.5;letter-spacing:-.01em;max-width:900px}
+
+/* ruled ledger */
+table.led{width:100%;border-collapse:collapse;font-size:14.5px}
+table.led th{font-size:11.5px;letter-spacing:.14em;color:var(--faint);font-weight:600;
+  text-align:right;padding:0 0 10px;border-bottom:1px solid var(--line)}
+table.led th:first-child{text-align:left}
+table.led td{padding:16px 0;border-bottom:1px solid var(--line);text-align:right;
+  font-variant-numeric:tabular-nums}
+table.led td:first-child{text-align:left;font-weight:600}
+table.led td.v{font-size:22px;font-weight:700;color:var(--navy)}
+table.led tr.tot td{border-bottom:2px solid var(--navy);border-top:1px solid var(--line);
+  padding-top:18px;font-weight:700}
+table.led tr.tot td.v{font-size:26px}
+table.led .sub{display:block;font-size:11.5px;font-weight:400;color:var(--gray);letter-spacing:.02em}
+
+/* stat strip */
+.strip{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line)}
+.strip div{padding:26px 22px 26px 0;border-bottom:1px solid var(--line)}
+.strip div+div{padding-left:26px;border-left:1px solid var(--line)}
+.strip .l{font-size:12px;color:var(--gray);letter-spacing:.06em}
+.strip .n{font-size:44px;font-weight:700;color:var(--navy);line-height:1.15;
+  font-variant-numeric:tabular-nums;margin-top:4px}
+.strip .n small{font-size:.36em;font-weight:600;margin-left:.1em}
+.strip .s{font-size:11.5px;color:var(--faint);margin-top:2px}
+
+/* photos */
+.gal{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.gal img{width:100%;height:100%;object-fit:cover;aspect-ratio:4/3;display:block;background:var(--soft)}
+.gal a{display:block;overflow:hidden}
+.gal a:nth-child(1){grid-column:span 2;grid-row:span 2}
+.gal a:nth-child(1) img{aspect-ratio:auto;height:100%}
+
+.note{font-size:11.5px;color:var(--faint);line-height:1.9;margin-top:18px}
+.note b{color:var(--gray);font-weight:600}
+
+/* dark closer */
+.dark{background:var(--navy-d);color:#fff}
+.dark h2{color:#7d90b4}
+.dark .big{font-size:clamp(70px,10vw,128px);font-weight:700;line-height:.95;color:#fff}
+.dark .big small{font-size:.3em;margin-left:.12em}
+.dark p{color:#9fb2d4;font-size:13px;letter-spacing:.06em;margin-top:20px}
+
+footer{padding:40px 0 70px;font-size:11.5px;color:var(--faint);line-height:1.9}
+
+@media(max-width:780px){
+  .wrap{padding:0 22px} section{padding:64px 0}
+  .strip{grid-template-columns:repeat(2,1fr)}
+  .strip div+div{padding-left:0;border-left:0}
+  .strip div:nth-child(even){padding-left:22px;border-left:1px solid var(--line)}
+  .gal{grid-template-columns:repeat(2,1fr)}
+  .gal a:nth-child(1){grid-column:span 2;grid-row:auto}
+  .gal a:nth-child(1) img{aspect-ratio:4/3}
+  table.led{font-size:13px} table.led td.v{font-size:18px}
+}
+@media print{
+  #bar{display:none} body{padding-top:0}
+  section{padding:44px 0;break-inside:avoid}
+  .cover,.dark{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+}
+</style>
+</head>
+<body>
+
+<div id="bar">
+  <b>2026年8月度 セルフコア事業 実績</b>
+  <button id="edit">編集</button>
+  <button id="save">HTML保存</button>
+  <button onclick="window.print()">印刷</button>
+  <button id="reset">リセット</button>
+  <span class="st" id="st"></span>
+</div>
+
+<div id="doc">
+
+<section class="cover">
+  <div class="wrap">
+    <div class="kicker">SELFCORE BUSINESS ／ MONTHLY REVIEW</div>
+    <h1>2026年8月度<br>セルフコア事業 実績</h1>
+    <div class="meta">株式会社ミズカラ ／ 対象期間 2026年8月1日 — 8月31日 ／ 8期</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>8月 売上実績</h2>
+    <div class="hero">
+      <div class="big num">4,092<small>万円</small></div>
+      <div class="side">
+        <div>GOAL</div>
+        <strong class="num">4,400万円</strong>
+        <div style="margin-top:18px">差異</div>
+        <strong class="num gap">▲308万円</strong>
+        <div style="margin-top:18px">達成率</div>
+        <strong class="num">93.0%</strong>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>プロダクト別 売上内訳</h2>
+    <table class="led">
+      <tr><th>プロダクト</th><th>売上</th><th>構成比</th></tr>
+      <tr><td>SELFCORE</td><td class="v num">2,171万円</td><td class="num">53.1%</td></tr>
+      <tr><td>REBOOST<span class="sub">一般開催</span></td><td class="v num">898万円</td><td class="num">21.9%</td></tr>
+      <tr><td>THE VISION</td><td class="v num">847万円</td><td class="num">20.7%</td></tr>
+      <tr><td>法人REBOOST</td><td class="v num">175万円</td><td class="num">4.3%</td></tr>
+      <tr class="tot"><td>合計</td><td class="v num">4,092万円</td><td class="num">100%</td></tr>
+    </table>
+    <p class="note"><b>出典</b> Slack #04_セルフコア事業部 2026-09-01 投稿。構成比は各プロダクト売上÷4,092万円で算出（内訳の単純合計は4,091万円、端数処理差）。</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>8月 集客人数</h2>
+    <div class="strip">
+      <div><div class="l">一般REBOOST ×2回</div><div class="n num">141<small>名</small></div></div>
+      <div><div class="l">法人REBOOST</div><div class="n num">51<small>名</small></div></div>
+      <div><div class="l">SELFCORE</div><div class="n num">45<small>名</small></div></div>
+      <div><div class="l">THE VISION</div><div class="n num">37<small>名</small></div></div>
+    </div>
+    <div style="margin-top:34px;display:flex;align-items:baseline;gap:20px">
+      <div style="font-size:12px;letter-spacing:.14em;color:var(--faint)">合計</div>
+      <div class="num" style="font-size:56px;font-weight:700;color:var(--navy);line-height:1">274<span style="font-size:.34em;font-weight:600;margin-left:.1em">名</span></div>
+    </div>
+    <p class="note"><b>出典</b> Slack #04_セルフコア事業部 2026-09-01 投稿。</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>8月 開催実績</h2>
+    <table class="led">
+      <tr><th>開催</th><th>日程</th><th>講師</th><th>会場</th></tr>
+      <tr><td>REBOOST 47期</td><td>8/8（土）- 8/9（日）</td><td>村岡</td><td>TKP新橋汐留</td></tr>
+      <tr><td>REBOOST 48期</td><td>8/15（土）- 8/16（日）</td><td>今田</td><td>TKP新橋汐留</td></tr>
+      <tr><td>法人REBOOST<span class="sub">ホットスタッフ 2期</span></td><td>8/17（月）- 8/18（火）</td><td>村岡</td><td>TKPガーデンシティPREMIUM京橋</td></tr>
+      <tr><td>SELFCORE 13期</td><td>8/21（金）- 8/23（日）</td><td>葉山</td><td>美の山</td></tr>
+      <tr><td>THE VISION 6期</td><td>8/28（金）- 8/30（日）</td><td>村岡</td><td>ザ・プリンス箱根芦ノ湖</td></tr>
+    </table>
+    <p class="note"><b>出典</b> kb/11_schedule_8ki.md（8期年間スケジュール）。</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>8月 満足度・NPS（受講後アンケート）</h2>
+    <table class="led">
+      <tr><th>開催</th><th>回答数</th><th>満足度<span class="sub" style="display:inline">（5点）</span></th><th>NPS<span class="sub" style="display:inline">（10点）</span></th><th>推奨者%</th><th>運営満足度</th></tr>
+      <tr><td>REBOOST 47期<span class="sub">8/9</span></td><td class="num">100</td><td class="v num">4.73</td><td class="v num">8.90</td><td class="num">67%</td><td class="num">4.68 <span class="sub" style="display:inline">/5</span></td></tr>
+      <tr><td>REBOOST 48期<span class="sub">8/16</span></td><td class="num">59</td><td class="v num">4.63</td><td class="v num">8.29</td><td class="num">54%</td><td class="num">4.43 <span class="sub" style="display:inline">/5</span></td></tr>
+      <tr><td>SELFCORE 13期<span class="sub">8月開催</span></td><td class="num">42</td><td class="v num">4.90</td><td class="v num">9.50</td><td class="num">—</td><td class="num">8.88 <span class="sub" style="display:inline">/10</span></td></tr>
+      <tr><td>THE VISION 6期<span class="sub">8月開催</span></td><td class="num">21</td><td class="v num">5.00</td><td class="v num">9.76</td><td class="num">—</td><td class="num">9.48 <span class="sub" style="display:inline">/10 全体体験</span></td></tr>
+    </table>
+
+    <h3 style="margin-top:64px">8期累計（2026年7月〜8月）</h3>
+    <table class="led">
+      <tr><th>プロダクト</th><th>開催数</th><th>回答数</th><th>満足度<span class="sub" style="display:inline">（5点）</span></th><th>NPS<span class="sub" style="display:inline">（10点）</span></th><th>推奨者%</th><th>正味NPS</th></tr>
+      <tr><td>REBOOST</td><td class="num">4</td><td class="num">311</td><td class="v num">4.77</td><td class="v num">8.81</td><td class="num">64.6%</td><td class="num">—</td></tr>
+      <tr><td>SELFCORE</td><td class="num">2</td><td class="num">124</td><td class="v num">4.89</td><td class="v num">9.44</td><td class="num">82.3%</td><td class="num">79.0</td></tr>
+      <tr><td>THE VISION</td><td class="num">3</td><td class="num">73</td><td class="v num">4.86</td><td class="v num">9.52</td><td class="num">84.9%</td><td class="num">82.2</td></tr>
+    </table>
+    <p class="note">
+      <b>出典</b> 3プロダクト_アンケート統合ダッシュボード（RB・SC・TV）／2026-09-02 時点の値。<br>
+      <b>注</b> REBOOSTは一般開催のみ集計対象（法人REBOOSTは本集計に含まれない）。正味NPS＝推奨者%（9-10）−批判者%（0-6）、REBOOSTは源泉データが推奨者%のみのため算出不可。運営満足度はSELFCORE・THE VISIONが0-10点、REBOOSTが1-5点で尺度が異なる。THE VISION 8期の開催数3にはアンケート回答日ベースの1件を含む。
+    </p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>8月 集合写真</h2>
+    <div class="gal">
+      <a href="media/p1.jpg" target="_blank"><img src="media/p1.jpg" alt="集合写真1" loading="lazy"></a>
+      <a href="media/p3.jpg" target="_blank"><img src="media/p3.jpg" alt="集合写真2" loading="lazy"></a>
+      <a href="media/p2.jpg" target="_blank"><img src="media/p2.jpg" alt="集合写真3" loading="lazy"></a>
+      <a href="media/p4.jpg" target="_blank"><img src="media/p4.jpg" alt="集合写真4" loading="lazy"></a>
+      <a href="media/p5.jpg" target="_blank"><img src="media/p5.jpg" alt="集合写真5" loading="lazy"></a>
+      <a href="media/p6.jpg" target="_blank"><img src="media/p6.jpg" alt="集合写真6" loading="lazy"></a>
+      <a href="media/p7.jpg" target="_blank"><img src="media/p7.jpg" alt="集合写真7" loading="lazy"></a>
+      <a href="media/p8.jpg" target="_blank"><img src="media/p8.jpg" alt="集合写真8" loading="lazy"></a>
+    </div>
+    <p class="note"><b>出典</b> Slack #04_セルフコア事業部 2026-09-01 投稿の添付8点。</p>
+  </div>
+</section>
+
+<section class="dark">
+  <div class="wrap">
+    <h2>9月 GOAL</h2>
+    <div class="big num">4,450<small>万円</small></div>
+    <p>出典：Slack #04_セルフコア事業部 2026-09-01 投稿</p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    作成 2026-09-02 ／ 松浦俊太<br>
+    一次ソース：Slack #04_セルフコア事業部（2026-09-01 07:33 投稿）、3プロダクト_アンケート統合ダッシュボード、8期年間スケジュール
+  </div>
+</footer>
+
+</div>
+
+<script>
+(function(){
+  var KEY='selfcore_202608_review_v1';
+  var doc=document.getElementById('doc'), st=document.getElementById('st');
+  var editing=false;
+  try{ var s=localStorage.getItem(KEY); if(s){ doc.innerHTML=s; st.textContent='保存済みの編集を復元'; } }catch(e){}
+  function persist(){ try{ localStorage.setItem(KEY, doc.innerHTML); st.textContent='自動保存 '+new Date().toLocaleTimeString('ja-JP'); }catch(e){} }
+  document.getElementById('edit').onclick=function(){
+    editing=!editing;
+    doc.contentEditable=editing?'true':'false';
+    this.textContent=editing?'編集中':'編集';
+    this.className=editing?'on':'';
+    if(!editing) persist();
+  };
+  doc.addEventListener('input',function(){ clearTimeout(window._t); window._t=setTimeout(persist,700); });
+  document.getElementById('save').onclick=function(){
+    var html='<!DOCTYPE html>\n<html lang="ja">'+document.documentElement.innerHTML+'</html>';
+    var a=document.createElement('a');
+    a.href=URL.createObjectURL(new Blob([html],{type:'text/html'}));
+    a.download='selfcore_202608_review.html'; a.click();
+  };
+  document.getElementById('reset').onclick=function(){
+    if(confirm('編集内容を破棄して初期状態に戻します。')){ try{localStorage.removeItem(KEY);}catch(e){} location.reload(); }
+  };
+})();
+</script>
+</body>
+</html>
